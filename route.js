@@ -1,7 +1,8 @@
 import { Router } from "express";
-import { createUser, getStatus } from "./controller.js";
+import { createUser, login } from "./auth/controller.js";
 const router = Router();
 
-router.get("/users", getStatus);
-router.post("/users", createUser);
+// router.get("/users", getStatus);
+router.post("/register", createUser); // acts as register
+router.post("/login", login);
 export { router };
